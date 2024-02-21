@@ -46,7 +46,7 @@ LimaCharlie is a cloud-based security infrastructure that provides tools to buil
   <p align="center"><img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fed440bb9-b0ea-4a0c-a66b-c6017100b3d6_719x213.png" height="40%" width="40%" /><p/></p> <br/>
 - **Testing and Tuning Rules**: Dynamically tested and tuned the rules in the Detection and Response engine to ensure accuracy and minimize false positives before deploying them in the production environment.
 - **Hunt for Evil**: Knowing what’s normal on a Windows host helps cut through the noise to quickly locate potential malware.
-  [Uploading SANS_DFPS_FOR508_v4.10_02-23 (1).pdf…]()
+  [Download PDF](https://sansorg.egnyte.com/dl/oQm41D67D6)
 
 
 
