@@ -1,9 +1,31 @@
 # LimaCharlie-EDR | Sliver C2 Project
-<h3>PART 1</h3>
--Set up 2 VMs - Ubuntu VM as an attack machine and Windows VM as the victim machine.<br/>
--Disabling Windows defender on Windows VM for no interference during the attack process to enable collecting logs and events for further analysis.<br/>
--Installed Sysmon for gathering telemetry on windows endpoint.<br/>
--Install LimaCharlie EDR on Windows VM and setting up for the windows agent where we perform further analysis.<br/>
--LimaCharlie is a very powerful “SecOps Cloud Platform”. It not only comes with a cross-platform EDR agent, but also handles all of the log shipping/ingestion 
-  and has a threat detection engine.<br/>
--Setting up attack system on Linux VM - Sliver C2 Framework.<br/>
+
+## Introduction
+
+Welcome to the LimaCharlie-EDR | Sliver C2 Project! This project aims to demonstrate the integration between the Sliver command and control (C2) framework and the LimaCharlie endpoint detection and response (EDR) platform for advanced adversarial simulations and detection engineering.
+
+### Part 1
+
+- **Setting up VMs**: Set up two VMs - Ubuntu VM as an attack machine and Windows VM as the victim machine.
+- **Disabling Windows Defender**: Disabled Windows Defender on the Windows VM to avoid interference during the attack process and enable better logging and event collection.
+- **Installing Sysmon**: Installed Sysmon on the Windows endpoint to gather telemetry.
+- **Installing LimaCharlie EDR**: Installed and configured LimaCharlie EDR on the Windows VM to set up the Windows agent for further analysis.
+
+#### What is LimaCharlie?
+
+LimaCharlie is a powerful SecOps Cloud Platform featuring a cross-platform EDR agent, log shipping/ingestion capabilities, and a threat detection engine.
+
+### Part 2
+
+- **Generating C2 Payload**: Generated a C2 payload using Sliver-server and downloaded it into the Windows VM (victim) via a temporary Python web server.
+- **Executing C2 Payload**: Executed the C2 payload on the Windows VM, enabling interaction with the C2 session.
+- **Observing EDR Telemetry**: Observed EDR telemetry to identify unknown files being downloaded and analyzed their behavior.
+- **Analyzing Suspected Executable**: Analyzed the suspected executable using tools like VirusTotal to determine its malicious nature.
+- **Analyzing Timeline EDR Telemetry**: Analyzed Timeline EDR telemetry to understand how the malicious payload was downloaded onto the Windows agent.
+
+### Part 3
+
+- **Credential Theft with Sliver C2**: Used Sliver C2 for stealing credentials by dumping the lsass.exe process from memory on the victim system.
+- **Creating Detection and Response Rule**: Created a Detection and Response rule in the LimaCharlie EDR for alerting on specific events related to lsass.exe.
+- **Testing and Tuning Rules**: Dynamically tested and tuned the rules in the Detection and Response engine to ensure accuracy and minimize false positives before deploying them in the production environment.
+
