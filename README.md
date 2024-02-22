@@ -4,7 +4,7 @@
 
 Welcome to the LimaCharlie-EDR | Sliver C2 Project! This project aims to demonstrate the integration between the Sliver command and control (C2) framework and the LimaCharlie endpoint detection and response (EDR) platform for advanced adversarial simulations and detection engineering.
 
-### Part 1
+### Setting up Ubuntu VM(Attack machine) and Windows VM(Victim machine) | Insatlling Sysmon and Limacharlie EDR
 
 - **Setting up VMs**: Set up two VMs - Ubuntu VM as an attack machine and Windows VM as the victim machine.
   <p align="center"><img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F853e640e-9992-44c2-875b-1d5f446facc2_690x150.png" height="40%" width="40%" /><p/></p> <br/>
@@ -19,7 +19,7 @@ Welcome to the LimaCharlie-EDR | Sliver C2 Project! This project aims to demonst
 
 LimaCharlie is a powerful SecOps Cloud Platform featuring a cross-platform EDR agent, log shipping/ingestion capabilities, and a threat detection engine.
 LimaCharlie is a cloud-based security infrastructure that provides tools to build a security program at any scale. It is a cross-platform endpoint sensor that executes detection and response functionality in real-time. LimaCharlie enables organizations to detect and respond to threats, automate processes, reduce the number of vendors, and future-proof their security operations.
-### Part 2
+### Enacting adversarial activity and observing EDR Telemetry
 
 - **Generating C2 Payload**: Generated a C2 payload using Sliver-server and downloaded it into the Windows VM (victim) via a temporary Python web server.
   <p align="center"><img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb80969a7-5f41-48e9-9f38-3436ac4137ea_590x287.png" height="40%" width="40%" /><p/></p> <br/>
@@ -36,7 +36,7 @@ LimaCharlie is a cloud-based security infrastructure that provides tools to buil
   <p align="center"><img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff042ab3d-fc43-45f9-b02f-2a7a0bc0e047_1063x466.png" height="40%" width="40%" /><p/></p> <br/>
   <p align="center"><img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8715db71-8990-43a5-b9d6-e47e0c5c6562_1125x290.png" height="40%" width="40%" /><p/></p> <br/>
 
-### Part 3
+### Detection Engineering - Writing and tuning detection rules for alerting/blocking the malicous activity
 
 - **Credential Theft with Sliver C2**: Used Sliver C2 for stealing credentials by dumping the lsass.exe process from memory on the victim system for performing detection and response analysis.
 - **Creating Detection and Response Rule**: Created a Detection and Response rule in the LimaCharlie EDR for alerting on specific events related to lsass.exe.
