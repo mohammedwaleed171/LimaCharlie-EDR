@@ -4,7 +4,7 @@
 
 Welcome to the LimaCharlie-EDR | Sliver C2 Project! This project aims to demonstrate the integration between the Sliver command and control (C2) framework and the LimaCharlie endpoint detection and response (EDR) platform for advanced adversarial simulations and detection engineering.
 
-## Setting up Ubuntu VM(Attack machine) and Windows VM(Victim machine) | Insatlling Sysmon and Limacharlie EDR
+## Setting up Ubuntu VM(Attack machine) and Windows VM(Victim machine) | Installing Sysmon and Limacharlie EDR
 
 - **Setting up VMs**: Set up two VMs - Ubuntu VM as an attack machine and Windows VM as the victim machine.
   <p align="center"><img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F853e640e-9992-44c2-875b-1d5f446facc2_690x150.png" height="40%" width="40%" /><p/></p> <br/>
