@@ -18,8 +18,7 @@ Welcome to the LimaCharlie-EDR | Sliver C2 Project! This project aims to demonst
 #### What is LimaCharlie?
 
 LimaCharlie is a powerful SecOps Cloud Platform featuring a cross-platform EDR agent, log shipping/ingestion capabilities, and a threat detection engine.
-LimaCharlie is a cloud-based security infrastructure that provides tools to build a security program at any scale. It is a cross-platform endpoint sensor that executes detection and response functionality in real-time. LimaCharlie enables organizations to detect and respond to threats, automate processes, reduce the number of vendors, and future-proof their security operations4. The platform is API-driven, allowing users to build the security they need and want.
-
+LimaCharlie is a cloud-based security infrastructure that provides tools to build a security program at any scale. It is a cross-platform endpoint sensor that executes detection and response functionality in real-time. LimaCharlie enables organizations to detect and respond to threats, automate processes, reduce the number of vendors, and future-proof their security operations.
 ### Part 2
 
 - **Generating C2 Payload**: Generated a C2 payload using Sliver-server and downloaded it into the Windows VM (victim) via a temporary Python web server.
