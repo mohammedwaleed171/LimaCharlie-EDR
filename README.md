@@ -47,7 +47,6 @@ LimaCharlie is a cloud-based security infrastructure that provides tools to buil
 - **Testing and Tuning Rules**: Dynamically tested and tuned the rules in the Detection and Response engine to ensure accuracy and minimize false positives before deploying them in the production environment.
 - **Hunt for Evil**: Knowing what’s normal on a Windows host helps cut through the noise to quickly locate potential malware.
   [Download PDF](https://sansorg.egnyte.com/dl/oQm41D67D6)
-  <p align="center"><img src="https://imgur.com/a/QevgVQY" height="40%" width="40%" /><p/></p> <br/>
 
 
 
