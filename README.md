@@ -47,6 +47,13 @@ LimaCharlie is a cloud-based security infrastructure that provides tools to buil
 - **Hunt for Evil**: To identify malicious log activity we must first know what's normal. Knowing what’s normal on a Windows host helps cut through the noise to quickly locate potential malware.
   SANS DFIR [Hunt Evil](https://sansorg.egnyte.com/dl/oQm41D67D6) gives an overview of what normal windows activity looks like.
 
+  ## YARA Signature Setup and Automation for Sliver C2 Payload Detection
+
+  - **Setup YARA Signature for Sliver C2 Payload**:
+  - Utilize YARA signatures provided by UK National Cyber Security Centre (NCSC) for Sliver C2 payload.
+  - Access LimaCharlie's "Automation" > "YARA Rules" section.
+  - Add YARA rules for Sliver and Sliver process.
+
 
 
 
