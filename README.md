@@ -53,17 +53,38 @@ LimaCharlie is a cloud-based security infrastructure that provides tools to buil
   - Utilize YARA signatures provided by UK National Cyber Security Centre (NCSC) for Sliver C2 payload.
   - Access LimaCharlie's "Automation" > "YARA Rules" section.
   - Add YARA rules for Sliver and Sliver process.
+    <p align="center"><img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F268295ea-fac3-453c-9d83-34da5bcbbe0a_778x790.png" height="40%" width="40%" /><p/></p> <br/>
  
   #### Configure D&R (Detect & Respond) Rules:
   - Create rules to detect YARA detections not involving a PROCESS object and those specifically involving a PROCESS object.
   - Set up actions for responding to YARA detections, such as reporting and tagging.
+    <p align="center"><img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F98a15dae-7894-490d-a2ef-824c1059d526_814x388.png" height="40%" width="40%" /><p/></p> <br/>
+    <p align="center"><img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8c37a0fb-918e-43e7-a9f8-f305be0bd2df_816x372.png" height="40%" width="40%" /><p/></p> <br/>
  
   #### Test YARA Signature:
   - Manually initiate a YARA scan using the EDR sensor on a Windows VM to test the Sliver payload detection.
+    <p align="center"><img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F97670b36-2032-4fa2-b90c-d4ccf3739a9a_774x216.png" height="40%" width="40%" /><p/></p> <br/>
+    <p align="center"><img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd59ccc4d-d539-4acb-96ca-bf93e04a6d73_814x432.png" height="40%" width="40%" /><p/></p> <br/>
+    <p align="center"><img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa2bff541-94e5-40be-aa56-c43d2d6ee62f_1608x316.png" height="40%" width="40%" /><p/></p> <br/>
 
    #### Automate YARA Scanning:
   - Create rules to automatically scan newly downloaded EXE files and processes launched from the Downloads directory.
   - Set up actions to report and initiate YARA scans for detected files and processes.
+    
+    - action: report
+  name: EXE dropped in Downloads directory
+- action: task
+  command: >-
+    yara_scan hive://yara/sliver -f "{{ .event.FILE_PATH }}"
+  investigation: Yara Scan Exe
+  suppression:
+    is_global: false
+    keys:
+      - '{{ .event.FILE_PATH }}'
+      - Yara Scan Exe
+    max_count: 1
+    period: 1m
+
 
     #### Test Automation Rules:
   - Simulate the creation of a new EXE file in the Downloads directory to trigger the automated YARA scan.
