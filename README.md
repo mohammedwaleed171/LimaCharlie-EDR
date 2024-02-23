@@ -72,6 +72,7 @@ LimaCharlie is a cloud-based security infrastructure that provides tools to buil
   - Set up actions to report and initiate YARA scans for detected files and processes.
     
     ```yaml
+    #Detect Block
     event: NEW_DOCUMENT
     op: and
       rules:
@@ -84,14 +85,29 @@ LimaCharlie is a cloud-based security infrastructure that provides tools to buil
       - op: ends with
         path: event/FILE_PATH
           value: .exe
+    '''yaml
+        #Detect Block
+        - action: report
+          name: EXE dropped in Downloads directory
+          - action: task
+        command: >-
+          yara_scan hive://yara/sliver -f "{{ .event.FILE_PATH
+              }}"
+          investigation: Yara Scan Exe
+        suppression:
+          is_global: false
+          keys:
+          - '{{ .event.FILE_PATH }}'
+          - Yara Scan Exe
+            max_count: 1
+            period: 1m
 
-
-    #### Test Automation Rules:
+   #### Test Automation Rules:
   - Simulate the creation of a new EXE file in the Downloads directory to trigger the automated YARA scan.
   - Execute the Sliver payload to generate a new process launched from the Downloads directory to trigger the automated YARA scan.
 
     #### Verification:
-  - Check the Detections tab to verify that the automation rules correctly detected and responded to the simulated activities, including alerts for EXE file     creation and YARA detections.
+  - Check the Detections tab to verify that the automation rules correctly detected and responded to the simulated activities, including alerts for EXE file  creation and YARA detections.
 
 
 
