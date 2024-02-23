@@ -85,7 +85,8 @@ LimaCharlie is a cloud-based security infrastructure that provides tools to buil
       - op: ends with
         path: event/FILE_PATH
           value: .exe
-    '''yaml
+    
+'''yaml
         #Detect Block
         - action: report
           name: EXE dropped in Downloads directory
@@ -101,6 +102,7 @@ LimaCharlie is a cloud-based security infrastructure that provides tools to buil
           - Yara Scan Exe
             max_count: 1
             period: 1m
+            
 
    #### Test Automation Rules:
   - Simulate the creation of a new EXE file in the Downloads directory to trigger the automated YARA scan.
