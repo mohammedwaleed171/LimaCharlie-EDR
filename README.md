@@ -71,19 +71,19 @@ LimaCharlie is a cloud-based security infrastructure that provides tools to buil
   - Create rules to automatically scan newly downloaded EXE files and processes launched from the Downloads directory.
   - Set up actions to report and initiate YARA scans for detected files and processes.
     
-    - action: report
-  name: EXE dropped in Downloads directory
-- action: task
-  command: >-
-    yara_scan hive://yara/sliver -f "{{ .event.FILE_PATH }}"
-  investigation: Yara Scan Exe
-  suppression:
-    is_global: false
-    keys:
-      - '{{ .event.FILE_PATH }}'
-      - Yara Scan Exe
-    max_count: 1
-    period: 1m
+    ```yaml
+event: NEW_DOCUMENT
+op: and
+rules:
+  - op: starts with
+    path: event/FILE_PATH
+    value: C:\Users\
+  - op: contains
+    path: event/FILE_PATH
+    value: \Downloads\
+  - op: ends with
+    path: event/FILE_PATH
+    value: .exe
 
 
     #### Test Automation Rules:
