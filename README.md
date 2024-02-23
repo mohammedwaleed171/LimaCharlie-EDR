@@ -72,18 +72,18 @@ LimaCharlie is a cloud-based security infrastructure that provides tools to buil
   - Set up actions to report and initiate YARA scans for detected files and processes.
     
     ```yaml
-event: NEW_DOCUMENT
-op: and
-rules:
-  - op: starts with
-    path: event/FILE_PATH
-    value: C:\Users\
-  - op: contains
-    path: event/FILE_PATH
-    value: \Downloads\
-  - op: ends with
-    path: event/FILE_PATH
-    value: .exe
+    event: NEW_DOCUMENT
+    op: and
+      rules:
+        - op: starts with
+     path: event/FILE_PATH
+      value: C:\Users\
+        - op: contains
+      path: event/FILE_PATH
+      value: \Downloads\
+      - op: ends with
+        path: event/FILE_PATH
+          value: .exe
 
 
     #### Test Automation Rules:
