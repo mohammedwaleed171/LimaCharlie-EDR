@@ -49,10 +49,29 @@ LimaCharlie is a cloud-based security infrastructure that provides tools to buil
 
   ## YARA Signature Setup and Automation for Sliver C2 Payload Detection
 
-  - **Setup YARA Signature for Sliver C2 Payload**:
+  #### Setup YARA Signature for Sliver C2 Payload:
   - Utilize YARA signatures provided by UK National Cyber Security Centre (NCSC) for Sliver C2 payload.
   - Access LimaCharlie's "Automation" > "YARA Rules" section.
   - Add YARA rules for Sliver and Sliver process.
+ 
+  #### Configure D&R (Detect & Respond) Rules:
+  - Create rules to detect YARA detections not involving a PROCESS object and those specifically involving a PROCESS object.
+  - Set up actions for responding to YARA detections, such as reporting and tagging.
+ 
+  #### Test YARA Signature:
+  - Manually initiate a YARA scan using the EDR sensor on a Windows VM to test the Sliver payload detection.
+
+ #### Automate YARA Scanning:
+  - Create rules to automatically scan newly downloaded EXE files and processes launched from the Downloads directory.
+  - Set up actions to report and initiate YARA scans for detected files and processes.
+
+#### Test Automation Rules:
+  - Simulate the creation of a new EXE file in the Downloads directory to trigger the automated YARA scan.
+  - Execute the Sliver payload to generate a new process launched from the Downloads directory to trigger the automated YARA scan.
+
+#### Verification:
+  - Check the Detections tab to verify that the automation rules correctly detected and responded to the simulated activities, including alerts for EXE file     creation and YARA detections.
+
 
 
 
