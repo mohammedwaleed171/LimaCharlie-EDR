@@ -86,7 +86,7 @@ LimaCharlie is a cloud-based security infrastructure that provides tools to buil
         path: event/FILE_PATH
           value: .exe
     
-     #Detect Block
+     #Respond Block
         - action: report
           name: EXE dropped in Downloads directory
           - action: task
@@ -106,9 +106,12 @@ LimaCharlie is a cloud-based security infrastructure that provides tools to buil
    #### Test Automation Rules:
   - Simulate the creation of a new EXE file in the Downloads directory to trigger the automated YARA scan.
   - Execute the Sliver payload to generate a new process launched from the Downloads directory to trigger the automated YARA scan.
+    <p align="center"><img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F99b25c07-256f-4fd0-a83e-e8578de2da91_1514x336.png" height="40%" width="40%" /><p/></p> <br/>
 
     #### Verification:
   - Check the Detections tab to verify that the automation rules correctly detected and responded to the simulated activities, including alerts for EXE file  creation and YARA detections.
+    <p align="center"><img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F391dd859-0362-41e7-aa98-83a05d866cd3_692x163.png" height="40%" width="40%" /><p/></p> <br/>
+    <p align="center"><img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa3e4bdec-d631-4572-b8d9-e3ad938da900_1822x278.png" height="40%" width="40%" /><p/></p> <br/>
 
 
 
