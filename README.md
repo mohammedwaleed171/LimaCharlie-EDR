@@ -86,8 +86,8 @@ LimaCharlie is a cloud-based security infrastructure that provides tools to buil
         path: event/FILE_PATH
           value: .exe
     
-  '''yaml
-        #Detect Block
+    '''yaml
+     #Detect Block
         - action: report
           name: EXE dropped in Downloads directory
           - action: task
