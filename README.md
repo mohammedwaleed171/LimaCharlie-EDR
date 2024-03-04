@@ -118,4 +118,5 @@ LimaCharlie is a cloud-based security infrastructure that provides tools to buil
 ## References and Resources
 
 - [Eric Capuano - So you want to be a SOC Analyst?](https://blog.ecapuano.com/p/so-you-want-to-be-a-soc-analyst-intro) - Blogpost
+- [Eric Capuano - So you want to be a SOC Analyst?](https://www.youtube.com/watch?v=P_Kl2EnF8_A&t=3641s) - Youtube
 
